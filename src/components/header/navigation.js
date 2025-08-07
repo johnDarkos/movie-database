@@ -1,14 +1,10 @@
-
-
-export const headerElement = () => {
-    const header = document.createElement('header');
+export const navigationElement = () => {
     const nav = document.createElement('nav');
     const ul = document.createElement('ul');
-    const logo = document.createElement('p')
-    
+    const logo = document.createElement('p');
     logo.classList.add("logo_text");
     logo.textContent = 'Best Movies';
-
+    
     ul.append(logo);
 
     ['Главная', 'Фильмы', 'Сериалы', 'Жанры'].forEach(text => {
@@ -34,8 +30,6 @@ export const headerElement = () => {
     });
     
     nav.appendChild(ul);
-    header.appendChild(nav);
-  
-    return header;
-  };
-  
+
+    return nav;
+}

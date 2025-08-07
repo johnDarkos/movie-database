@@ -1,8 +1,6 @@
- 
 const state = {
    searchQuery: '',
-   searchResults: [],
-   movieDetails: {},
+   searchResults: {},
    cache: {}, // query -> массив фильмов
  };
 

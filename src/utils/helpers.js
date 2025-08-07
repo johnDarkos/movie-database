@@ -1,6 +1,4 @@
- 
-
- export const cleanAppHtml = () => {
-    document.getElementById('app').innerHTML = "";
- }
+export const cleanAppHtml = () => {
+   document.getElementById('app').innerHTML = "";
+}
 

@@ -1,19 +1,17 @@
 import { renderHome } from "../views/renderHomeView.js";
-import { renderMovie } from "../views/movieView.js";
+import { renderMovie } from "../views/renderMovieView.js";
 
 export const handleRoute = () => {
     let hash = window.location.hash;
 
     if (hash.startsWith('#/')) {
-      hash = hash.slice(2); // удаляем "#/"
+      hash = hash.slice(2); 
     } else if (hash.startsWith('#')) {
-      hash = hash.slice(1); // удаляем "#"
+      hash = hash.slice(1); 
     }
     
     const [route, id] = hash.split('/');
     
-    
-
    console.log(route, id)
 
    switch (route) {
@@ -24,13 +22,19 @@ export const handleRoute = () => {
            renderHome();
            break;
        case 'movie':
-           renderMovie(id);
+           if (id) {
+               renderMovie(id);
+           } else {
+               console.log('Movie ID is required');
+               renderHome();
+           }
            break;
        // case 'search':
        //     renderSearch();
        //     break;
        default:
            console.log('ROUTE NOT MATCHED:', route);
+           renderHome();
            break;
    }
 }
